@@ -4,13 +4,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WidgetPluginComponent } from './widget-plugin.component';
 import { WidgetPluginConfig } from './widget-plugin-config.component';
-import { FormsModule, hookComponent, gettext } from '@c8y/ngx-components';
+import { FormsModule, gettext, hookWidget } from '@c8y/ngx-components';
 
 @NgModule({
   declarations: [WidgetPluginComponent, WidgetPluginConfig],
   imports: [CommonModule, FormsModule],
   providers: [
-    hookComponent({
+    hookWidget({
       id: 'angular.widget.plugin',
       label: gettext('Module Federation widget'),
       description: gettext('Widget added via Module Federation'),
