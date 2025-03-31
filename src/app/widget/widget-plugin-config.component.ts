@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 import { DynamicComponent, OnBeforeSave, AlertService } from '@c8y/ngx-components';
+import { WidgetPluginConfig } from './widget-plugin.model';
 
 @Component({
   selector: 'c8y-widget-plugin-config',
@@ -19,8 +20,8 @@ import { DynamicComponent, OnBeforeSave, AlertService } from '@c8y/ngx-component
   `,
   viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
-export class WidgetPluginConfig implements DynamicComponent, OnBeforeSave {
-  @Input() config: any = {};
+export class WidgetPluginConfigComponent implements DynamicComponent, OnBeforeSave {
+  @Input() config: WidgetPluginConfig = {};
 
   constructor(private alert: AlertService) {}
 

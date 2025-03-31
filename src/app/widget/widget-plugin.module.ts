@@ -3,11 +3,11 @@ import { assetPaths } from '../../assets/assets';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WidgetPluginComponent } from './widget-plugin.component';
-import { WidgetPluginConfig } from './widget-plugin-config.component';
+import { WidgetPluginConfigComponent } from './widget-plugin-config.component';
 import { FormsModule, gettext, hookWidget } from '@c8y/ngx-components';
 
 @NgModule({
-  declarations: [WidgetPluginComponent, WidgetPluginConfig],
+  declarations: [WidgetPluginComponent, WidgetPluginConfigComponent],
   imports: [CommonModule, FormsModule],
   providers: [
     hookWidget({
@@ -16,7 +16,11 @@ import { FormsModule, gettext, hookWidget } from '@c8y/ngx-components';
       description: gettext('Widget added via Module Federation'),
       component: WidgetPluginComponent,
       previewImage: assetPaths.previewImage,
-      configComponent: WidgetPluginConfig
+      configComponent: WidgetPluginConfigComponent,
+      data: {
+        schema: () =>
+          import('c8y-schema-loader?interfaceName=WidgetPluginConfig!./widget-plugin.model')
+      }
     })
   ]
 })

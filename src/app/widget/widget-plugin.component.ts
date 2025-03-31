@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { WidgetPluginConfig } from './widget-plugin.model';
 
 @Component({
   selector: 'c8y-widget-plugin',
@@ -12,5 +13,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./widget-plugin.component.css']
 })
 export class WidgetPluginComponent {
-  @Input() config;
+  @Input() config: WidgetPluginConfig;
 }
