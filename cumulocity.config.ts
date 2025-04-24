@@ -21,6 +21,7 @@ export default {
         name: 'Example widget plugin',
         module: 'WidgetPluginModule',
         path: './src/app/widget/widget-plugin.module.ts',
+        readmePath: './src/app/widget/README.md',
         description: 'Adds a custom widget to the shell application'
       }
     ]
